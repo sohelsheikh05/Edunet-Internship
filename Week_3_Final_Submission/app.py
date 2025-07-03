@@ -3,10 +3,10 @@ import numpy as np
 import joblib
 import pickle
 import streamlit as st
-
+import os
 # Load the model and structure
-model = joblib.load("pollution_model.pkl")
-model_cols = joblib.load("model_columns.pkl")
+model = joblib.load(os.path.join(os.path.dirname(__file__), "pollution_model.pkl"))
+model_cols = joblib.load(os.path.join(os.path.dirname(__file__), "model_columns.pkl"))
 
 # Let's create an User interface
 st.title("Water Pollutants Predictor")
